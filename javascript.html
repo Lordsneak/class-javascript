@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        
+        <script>
+                    class Form{
+                            constructor(nom,prenom,date,lieu,telephone,addresse){
+                    this.nom = nom;
+                    this.prenom = prenom;
+                    this.date = date;
+                    this.lieu = lieu;
+                    this.telephone = telephone;
+                    this.addresse = addresse;
+                }
+                    }
+            function afficher(){
+
+                    var nom = document.getElementById('s1').value;
+                    var prenom = document.getElementById('s2').value;
+                    var date = document.getElementById('s3').value;
+                    var lieu = document.getElementById('s4').value;
+                    var telephone = document.getElementById('s5').value;
+                    var addresse = document.getElementById('s6').value;
+
+                    let object=new Form(nom,prenom,date,lieu,telephone,addresse);
+                    var table = document.getElementById("myTable");
+                    var row = table.insertRow(1);
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    var cell3 = row.insertCell(2);
+                    var cell4 = row.insertCell(3);
+                    var cell5 = row.insertCell(4);
+                    var cell6 = row.insertCell(5);
+
+                    cell1.innerHTML = object.nom;
+                    cell2.innerHTML = object.prenom;
+                    cell3.innerHTML = object.date;
+                    cell4.innerHTML = object.lieu;
+                    cell5.innerHTML = object.telephone;
+                    cell6.innerHTML = object.addresse;
+
+            }
+        </script>
+    </head>
+    <body>
+        <h1 style="margin-left: 100px;text-align: center;font-family: Open Sans;"> Enter Your Information</h1>
+        <div class="form1">
+              <label for="fname">First Name</label>
+              <input type="text" id="s1" name="firstname" placeholder="Your Name.." required>
+          
+              <label for="lname">Last Name</label>
+              <input type="text" id="s2" name="lastname" placeholder="Your Prenom.." required>
+
+              <label for="lname">Date</label>
+              <input type="text" id="s3" name="lastname" placeholder="Your Date.." required>
+
+              <label for="lname">Lieu</label>
+              <input type="text" id="s4" name="lastname" placeholder="Your Lieu.." required>
+
+              <label for="lname">Telephone</label>
+              <input type="text" id="s5" name="lastname" placeholder="Your Telephone.." required>
+
+              <label for="lname">Adresse</label>
+              <input type="text" id="s6" name="lastname" placeholder="Your Adresse.." required>
+
+              <input type="submit" onclick="afficher()" value="Submit">
+            </form>
+          </div>
+        <div class="form2">
+         <table  id="myTable">
+         <tr>
+             <td>Nom</td>
+             <td>Prenom</td>
+             <td>Date</td>
+             <td>Lieu</td>
+             <td>Telephone</td>
+             <td>Adresse</td>
+         </tr>
+        </table>  
+          </div>
+
+    </body>
+
+
+</html>
